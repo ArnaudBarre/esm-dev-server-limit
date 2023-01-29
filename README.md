@@ -24,9 +24,11 @@ Vite TS: 2235ms (runs: [2303,2245,2235,2231,2227])
 
 ## Conclusions
 
-- In localhost, 1k browser <-> dev-server round-trips is quite fast. For my machine with Chrome 108, it's close to 1ms. This is probably higher for files with a more realistic number of bytes, but this something that you will also need to pay with a bundled dev-server.
+- In localhost, browser <-> dev-server round-trip is quite fast. For my machine with Chrome 108, it's close to 1ms per request. This is probably higher for files with a more realistic number of bytes, but this something that you will also need to pay with a bundled dev-server.
 - Extension-less imports seems less an issue than I expected. But I still think we should jump on it with TS 5.
 - The overhead of 1k calls to esbuild is also not that big and this something that can become invisible if running inside Bun with the builtin transpiler: https://twitter.com/jarredsumner/status/1617515988165218304
+
+**Overhaul I think that ESM dev-server can scale well to big apps, and that we should keep the direction of making most things simple with fast transformation without complex caching system.**
 
 ## Faster restart
 
