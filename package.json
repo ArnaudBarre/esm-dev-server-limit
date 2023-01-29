@@ -1,0 +1,21 @@
+{
+  "name": "esm-dev-server-limit",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "node ./node_modules/puppeteer/install.js",
+    "codegen": "bun codegen.ts",
+    "test": "esbuild test.ts --outfile=test.js --log-level=error && node test.js"
+  },
+  "prettier": {
+    "trailingComma": "all"
+  },
+  "dependencies": {
+    "puppeteer": "^19.6.2",
+    "vite": "^4.1.0-beta.1"
+  },
+  "devDependencies": {
+    "bun-types": "^0.4.0",
+    "prettier": "^2.8.3"
+  }
+}
